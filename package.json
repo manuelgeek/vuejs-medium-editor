@@ -1,0 +1,64 @@
+{
+  "name": "vuejs-medium-editor",
+  "version": "1.0.0",
+  "main": "./src/Editor.vue",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "publish-demo": "git subtree push --prefix dist origin gh-pages"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.0",
+    "@fortawesome/free-regular-svg-icons": "^5.1.0",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0",
+    "@fortawesome/vue-fontawesome": "^0.1.0",
+    "bulma": "^0.7.1",
+    "embed-js": "4.2.3",
+    "embed-plugin-github": "^5.0.3",
+    "embed-plugin-noembed": "^5.0.3",
+    "embed-plugin-url": "^5.0.3",
+    "embed-plugin-youtube": "^5.0.3",
+    "embed-preset-basic": "^5.0.3",
+    "iframe-resizer": "^3.6.1",
+    "medium-editor": "^5.23.3",
+    "pure-gist-embed": "^1.0.3",
+    "randomstring": "^1.1.5",
+    "underscore": "^1.9.1",
+    "vue": "^2.5.16",
+    "vue-upload-component": "^2.8.9"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0-rc.3",
+    "@vue/cli-plugin-eslint": "^3.0.0-rc.3",
+    "@vue/cli-service": "^3.0.0-rc.3",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {
+      "no-console": 0,
+      "indent": 0
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
