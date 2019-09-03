@@ -1,9 +1,16 @@
 {
   "name": "vuejs-medium-editor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./src/Editor.vue",
   "description": "This is a Medium like editor for Vue Js 2",
-  "keywords" : ["vue", "medium editor", "vue text editor", "vue2 editor", "Nuxt js editor","js"],
+  "keywords": [
+    "vue",
+    "medium editor",
+    "vue text editor",
+    "vue2 editor",
+    "Nuxt js editor",
+    "js"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -11,8 +18,8 @@
     "publish-demo": "git subtree push --prefix dist origin gh-pages"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/manuelgeek/vuejs-medium-editor"
+    "type": "git",
+    "url": "https://github.com/manuelgeek/vuejs-medium-editor"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.0",
