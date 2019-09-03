@@ -1,6 +1,6 @@
 # VueJS Medium Editor
 
-Vue2 component for Medium Editor wrapper with https://github.com/yabwe/medium-editor
+Vue Js component for Medium Editor wrapper with https://github.com/yabwe/medium-editor
 But all plugins are re-writing in Vue.js
 
 This is an update of the original repo [vue2-medium-editor](https://github.com/tui2tone/vue2-medium-editor). Seems there are never more pull requsts. Fixed few bugs and issues
