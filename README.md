@@ -1,3 +1,4 @@
+[![npm version](https://badge.fury.io/js/vuejs-medium-editor.svg)](https://badge.fury.io/js/vuejs-medium-editor)  [![npm version](https://badgen.net/npm/dt/vuejs-medium-editor)](https://badgen.net/npm/dt/vuejs-medium-editor) [![npm version](https://badgen.net/npm/license/lodash)](https://badgen.net/npm/license/lodash)
 # VueJS Medium Editor
 
 Vue Js component for Medium Editor wrapper with https://github.com/yabwe/medium-editor
