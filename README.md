@@ -1,13 +1,14 @@
-# Vue2 Medium Editor
+# VueJS Medium Editor
 
 Vue2 component for Medium Editor wrapper with https://github.com/yabwe/medium-editor
 But all plugins are re-writing in Vue.js
 
 This is an update of the original repo [vue2-medium-editor](https://github.com/tui2tone/vue2-medium-editor). Seems there are never more pull requsts. Fixed few bugs and issues
 
-[Demo](https://tui2tone.github.io/vuejs-medium-editor/)
+## Demo
+[Demo](https://tui2tone.github.io/vue2-medium-editor/?target=_blank)
 
-ps. a demo work for all features except upload photo because i doesn't deploy a serverside.
+NOTE: The demo works for all features except upload photo because i doesn't deploy a serverside.
 
 ## Features
 - Medium like editor
@@ -106,6 +107,8 @@ css: [
 
 The original repo [vue2-medium-editor](https://github.com/tui2tone/vue2-medium-editor)
 customised this to my preference
+
+[<img width=200 src="https://appslab.co.ke/assets/img/logo.png">](https://appslab.co.ke) 
 
 ## License
 
