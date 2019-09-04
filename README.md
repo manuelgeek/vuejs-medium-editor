@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/vuejs-medium-editor.svg)](https://badge.fury.io/js/vuejs-medium-editor)  [![npm version](https://badgen.net/npm/dt/vuejs-medium-editor)](https://badgen.net/npm/dt/vuejs-medium-editor) [![npm version](https://badgen.net/npm/license/lodash)](https://badgen.net/npm/license/lodash)
+[![npm version](https://badge.fury.io/js/vuejs-medium-editor.svg)](https://github.com/manuelgeek/vuejs-medium-editor)  [![npm version](https://badgen.net/npm/dt/vuejs-medium-editor)](https://github.com/manuelgeek/vuejs-medium-editor) [![npm version](https://badgen.net/npm/license/lodash)](https://github.com/manuelgeek/vuejs-medium-editor)
 # VueJS Medium Editor
 
 Vue Js component for Medium Editor wrapper with https://github.com/yabwe/medium-editor
@@ -6,8 +6,6 @@ But all plugins are re-writing in Vue.js
 
 ## Demo
 [Demo](https://manuelgeek.github.io/vuejs-medium-editor/)
-
-NOTE: The demo works for all features except upload photo because i doesn't deploy a serverside.
 
 ## Features
 - Medium like editor
@@ -111,4 +109,4 @@ customised this to my preference
 
 ## License
 
-MIT: https://github.com/tui2tone/vue2-medium-editor/blob/master/LICENSE
+MIT: https://github.com/manuelgeek/vuejs-medium-editor/blob/master/LICENSE
