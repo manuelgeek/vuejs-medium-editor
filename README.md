@@ -12,6 +12,7 @@ But all plugins are re-writing in Vue.js
 - Image uploader and description
     - Image width configable width for normal / expand / full screen sizing
 - Embed Gist
+- Inline code syntax highting
 
 ## Usage
 
@@ -37,6 +38,12 @@ import MediumEditor from 'vuejs-medium-editor'
 Vue.component('medium-editor', MediumEditor)
 ```
 
+Don't forget to include css file in your project
+```js
+require 'medium-editor/dist/css/medium-editor.css'
+require 'vuejs-medium-editor/src/themes/default.css'
+```
+
 usage
 
 ```js
@@ -54,6 +61,41 @@ export default {
 }
 </script>
 ```
+### toolbar
+you can customize the toolbar buttons too 
+
+```js
+    toolbar: {
+          buttons: ["bold", "italic", "underline", "quote", "h1", "h2", "h3", 'pre', 'unorderedlist']
+        }
+```
+available options: ``bold,
+italic,
+underline,
+strikethrough,
+superscript,
+subscript,
+image,
+html,
+orderedlist,
+unorderedlist,
+indent,
+outdent,
+justifyCenter,
+justifyFull,
+justifyLeft,
+justifyRight,
+removeFormat,
+quote,
+pre,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6``
+
+### images
 
 available options too thanks to [ErgoFriend](https://github.com/ErgoFriend) pull request on the original repo
 
@@ -67,10 +109,28 @@ options: {
 
 ```
 
-Don't forget to include css file in your project
-```js
-require 'medium-editor/dist/css/medium-editor.css'
-require 'vuejs-medium-editor/src/themes/default.css'
+### code highlighting
+
+You can include the ``pre`` option on the toolbar to include a code snipet apart from the ``<>`` attachment icon to include your gist link.
+
+you can make use of [Code Prettify](https://github.com/google/code-prettify)
+see its doc on [getting started](https://github.com/google/code-prettify/blob/master/docs/getting_started.md) on its styling and possible options. 
+
+Include its JS file in your index.html header 
+``` html
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=default"></script>
+```
+Code prettify uses ``<pre>`` or ``<code>`` with a ``class="prettyprint"`` 
+
+you can add this class to your code in the component mount as follows;
+```js 
+mounted(){
+      const els = document.getElementsByTagName("pre");
+      for (let i = 0; i < els.length; i++) {
+          const element = els[i];
+          element.classList.add('prettyprint');
+      }
+  }
 ```
 
 ### Nuxt.js Usage

@@ -17,8 +17,9 @@ export default {
   data() {
     return {
       content: ``,
-      defaultValue: `<h1>Vue2 <b>Medium Editor</b></h1>
+      defaultValue: `<h1>Vuejs <b>Medium Editor</b></h1>
           <div class="editor-image is-full"><img src="https://source.unsplash.com/yxNURc8he3o/2000x600"></div>
+          <pre>axios.interceptors.response.use(function (response) {<br>  return response;<br>}, function (error) {<br>  const originalRequest = error.config;<br>  if (error.response.status === 401 &amp;&amp; !originalRequest._retry) {<br>    originalRequest._retry = true;<br>    const refreshToken = window.localStorage.getItem('refreshToken');<br>    return axios.post('http://localhost:8000/auth/refresh', { refreshToken })<br>      .then(({data}) =&gt; {<br>        window.localStorage.setItem('token', data.token);<br>        window.localStorage.setItem('refreshToken', data.refreshToken);<br>        axios.defaults.headers.common['Authorization'] = 'Bearer ' + data.token;<br>        originalRequest.headers['Authorization'] = 'Bearer ' + data.token;<br>        return axios(originalRequest);<br>      });<br>  }<br>  return Promise.reject(error);<br>});</pre>
           <div class="editor-image-description">righteous indignation and dislike</div>
           <p>But I must explain to you how all this mistaken idea of denouncing <b>pleasure and praising pain was born and I will give you</b> a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes</p><p class="editor-embed">
             <a href="https://gist.github.com/Culttm/a8c3ca85032c4b0cc67037425f150c44">https://gist.github.com/Culttm/a8c3ca85032c4b0cc67037425f150c44</a>
@@ -51,6 +52,9 @@ export default {
         uploadUrlHeader: {'Authorization': 'Client-ID db856b43cc7f441'},
         file_input_name: "image",
         imgur: true,
+        toolbar: {
+          buttons: ["bold", "italic", "underline", "quote", "h1", "h2", "h3", 'pre', 'unorderedlist']
+        }
       }
     };
   },
@@ -64,6 +68,13 @@ export default {
     uploadCallback(url) {
         console.log("uploaded url", url)
     }
+  },
+  mounted(){
+      const els = document.getElementsByTagName("pre");
+      for (let i = 0; i < els.length; i++) {
+          const element = els[i];
+          element.classList.add('prettyprint');
+      }
   }
 };
 </script>
