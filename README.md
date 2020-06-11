@@ -3,6 +3,7 @@
 
 Vue Js component for Medium Editor wrapper with https://github.com/yabwe/medium-editor
 But all plugins are re-writing in Vue.js
+All Medium Editor configs are supported
 
 ## Demo
 [Demo](https://manuelgeek.github.io/vuejs-medium-editor/)
@@ -11,6 +12,7 @@ But all plugins are re-writing in Vue.js
 - Medium like editor
 - Image uploader and description
     - Image width configable width for normal / expand / full screen sizing
+    - Imgur uploading 
 - Embed Gist
 - Inline code syntax highting
 
@@ -42,6 +44,18 @@ Don't forget to include css file in your project
 ```js
 require 'medium-editor/dist/css/medium-editor.css'
 require 'vuejs-medium-editor/src/themes/default.css'
+// for the code highlighting
+require 'highlight.js/styles/ocean.css';
+```
+OR in `styles` like below
+
+```css
+<style lang="css">
+@import "~medium-editor/dist/css/medium-editor.css";
+@import "./themes/default.css";
+/*@import '~highlight.js/styles/github.css';*/
+@import '~highlight.js/styles/ocean.css';
+</style>
 ```
 
 usage
@@ -69,31 +83,19 @@ you can customize the toolbar buttons too
           buttons: ["bold", "italic", "underline", "quote", "h1", "h2", "h3", 'pre', 'unorderedlist']
         }
 ```
-available options: ``bold,
-italic,
-underline,
-strikethrough,
-superscript,
-subscript,
-image,
-html,
-orderedlist,
-unorderedlist,
-indent,
-outdent,
-justifyCenter,
-justifyFull,
-justifyLeft,
-justifyRight,
-removeFormat,
-quote,
-pre,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6``
+available options: All options are available [here](https://github.com/yabwe/medium-editor#mediumeditor-options)
+You can also override options like in Medium Editor ;
+ ```js
+ buttons: ["anchor", {
+                       name: 'pre',
+                       action: 'append-pre',
+                       aria: 'code highlight',
+                       tagNames: ['pre'],
+                       contentDefault: '<b><\\></b>',
+                       contentFA: '<i class="fa fa-code fa-lg"></i>'
+                   },]
+
+ ```
 
 ### images
 
@@ -110,28 +112,20 @@ options: {
 ```
 
 ### code highlighting
+Code highlighting is inbuilt using [highlight.js](https://github.com/highlightjs/highlight.js)
 
-You can include the ``pre`` option on the toolbar to include a code snipet apart from the ``<>`` attachment icon to include your gist link.
-
-you can make use of [Code Prettify](https://github.com/google/code-prettify)
-see its doc on [getting started](https://github.com/google/code-prettify/blob/master/docs/getting_started.md) on its styling and possible options. 
-
-Include its JS file in your index.html header 
-``` html
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=default"></script>
+You should include the `highligh.js` css file within the styles
+```css
+<style>
+    /*default css  */
+    @import '~highlight.js/styles/default.css';
+    /* github style */
+    @import '~highlight.js/styles/github.css';
+</style>
 ```
-Code prettify uses ``<pre>`` or ``<code>`` with a ``class="prettyprint"`` 
 
-you can add this class to your code in the component mount as follows;
-```js 
-mounted(){
-      const els = document.getElementsByTagName("pre");
-      for (let i = 0; i < els.length; i++) {
-          const element = els[i];
-          element.classList.add('prettyprint');
-      }
-  }
-```
+You can get [more theme styles here](https://highlightjs.org/static/demo/)
+
 
 ### Nuxt.js Usage
 
@@ -156,7 +150,8 @@ include a css file
 ```js
 css: [
     'medium-editor/dist/css/medium-editor.css',
-    'vuejs-medium-editor/src/themes/default.css'
+    'vuejs-medium-editor/src/themes/default.css',
+    'highlight.js/styles/ocean.css' //if using code highlight
 ]
 ```
 
