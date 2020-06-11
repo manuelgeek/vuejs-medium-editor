@@ -164,4 +164,11 @@ customised this to my preference
 
 ## License
 
-MIT: https://github.com/manuelgeek/vuejs-medium-editor/blob/master/LICENSE
+[MIT](LICENSE)
+
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](#)
+
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source-200x33.png?v=103)](#)
+
+
+Happy coding, Star before Fork 😊💪💯
