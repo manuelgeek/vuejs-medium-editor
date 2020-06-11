@@ -155,6 +155,13 @@ css: [
 ]
 ```
 
+## About Me 
+
+<p align="center"><img src="https://magak.me/assets/images/Geek-logo.png" width="150">
+
+<a target="_blank" href="https://magak.me">Magak Emmanuel</a>
+</p>
+
 ## Credits
 
 The original repo [vue2-medium-editor](https://github.com/tui2tone/vue2-medium-editor)
