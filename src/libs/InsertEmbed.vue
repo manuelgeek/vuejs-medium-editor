@@ -18,9 +18,10 @@
                     :handler="handler"
                     v-on:uploaded="uploadCallback"
                     v-on:imageClick="imageClickHandler"
+                    title="Insert Image"
                 ></insert-image>
                 <insert-gist :editor="editor"
-                    v-on:onChange="onChange" :insert="insert"></insert-gist>
+                    v-on:onChange="onChange" :insert="insert" title="Insert gist"></insert-gist>
             </div>
         </div>
         <image-position
@@ -95,7 +96,7 @@ export default {
         detectImageDescription() {
             const focused = this.editor.getFocusedElement()
             if(!focused) return;
-            
+
             const editorImages = focused.getElementsByClassName('editor-image-description')
             _.map(editorImages, (elm) => {
                 const description = elm.innerHTML.trim()

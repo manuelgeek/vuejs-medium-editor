@@ -13,8 +13,8 @@
     font-size: 1.2rem;
 }
 
-.medium-editor-container p, 
-.medium-editor-container h1, 
+.medium-editor-container p,
+.medium-editor-container h1,
 .medium-editor-container h2,
 .medium-editor-container h3,
 .medium-editor-container h4,
@@ -313,7 +313,7 @@ iframe{
     position: relative;
 }
 
-.medium-editor-container .editor-image-description.is-empty::after { 
+.medium-editor-container .editor-image-description.is-empty::after {
     content: "Image Description";
     color: #BBB;
     position: absolute;

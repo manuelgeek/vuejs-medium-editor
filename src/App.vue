@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <medium-editor 
+        <medium-editor
             v-model="content"
             :prefill="defaultValue"
             :options="options"
@@ -53,7 +53,33 @@ export default {
         file_input_name: "image",
         imgur: true,
         toolbar: {
-          buttons: ["bold", "italic", "underline", "quote", "h1", "h2", "h3", 'pre', 'unorderedlist']
+          buttons: ["bold", "italic",
+          {
+              name: 'anchor',
+              action: 'createLink',
+              aria: 'link',
+              tagNames: ['a'],
+              contentDefault: '<b>🔗</b>',
+              contentFA: '<i class="fa fa-link"></i>',
+          },
+          "underline", "quote", "h1", "h2", "h3", "h4",
+          {
+              name: 'pre',
+              action: 'append-pre',
+              aria: 'code highlight',
+              tagNames: ['pre'],
+              contentDefault: '<b><\\></b>',
+              contentFA: '<i class="fa fa-code fa-lg"></i>'
+          },
+          'unorderedlist', 'orderedlist',
+          {
+              name: 'image',
+              action: 'image',
+              aria: 'insert image from url',
+              tagNames: ['img'],
+              contentDefault: '<b>image</b>',
+              contentFA: '<i class="fa fa-picture-o"></i>'
+          }]
         }
       }
     };
@@ -70,11 +96,7 @@ export default {
     }
   },
   mounted(){
-      const els = document.getElementsByTagName("pre");
-      for (let i = 0; i < els.length; i++) {
-          const element = els[i];
-          element.classList.add('prettyprint');
-      }
+
   }
 };
 </script>
@@ -83,4 +105,6 @@ export default {
 @import "~bulma/css/bulma.css";
 @import "~medium-editor/dist/css/medium-editor.css";
 @import "./themes/default.css";
+/*@import '~highlight.js/styles/github.css';*/
+@import '~highlight.js/styles/ocean.css';
 </style>

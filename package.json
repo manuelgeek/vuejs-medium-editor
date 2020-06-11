@@ -33,6 +33,7 @@
     "embed-plugin-url": "^5.0.3",
     "embed-plugin-youtube": "^5.0.3",
     "embed-preset-basic": "^5.0.3",
+    "highlight.js": "^10.0.3",
     "iframe-resizer": "^3.6.1",
     "medium-editor": "^5.23.3",
     "pure-gist-embed": "^1.0.3",

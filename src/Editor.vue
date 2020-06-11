@@ -2,7 +2,7 @@
     <div>
         <!-- Editor Mode -->
         <div class="medium-editor-container" v-if="!readOnly">
-            <insert-embed v-if="editor" 
+            <insert-embed v-if="editor"
                 :uploadUrl="options.uploadUrl"
                 :uploadUrlHeader="options.uploadUrlHeader"
                 :file_input_name="options.file_input_name"
@@ -14,7 +14,7 @@
             <list-handler v-if="editor"
                 :editor="editor"
                 :onChange="triggerChange"></list-handler>
-            <div class="editor" 
+            <div class="editor"
                 v-bind:class="editorClass"
                 v-html="prefill"
                 ref="editor">
@@ -31,6 +31,8 @@ import InsertEmbed from './libs/InsertEmbed';
 import ListHandler from './libs/ListHandler';
 import ReadMode from './libs/ReadMode';
 import _ from 'underscore';
+import hljs from 'highlight.js';
+
 export default {
   name: "medium-editor",
   data() {
@@ -46,10 +48,11 @@ export default {
         file_input_name: "image",
         imgur: true,
         toolbar: {
-          buttons: ["bold", "italic", "quote", "h1", "h2", "h3", "h4", "h5", ]
+          buttons: ["bold", "italic", "quote", "h1", "h2", "h3", "h4", "h5", "anchor" ]
         }
       },
-      hasContent: false
+      hasContent: false,
+        autoLink: true
     };
   },
   props: ["options", "onChange", "prefill", "readOnly"],
@@ -69,6 +72,7 @@ export default {
     ReadMode
   },
   mounted() {
+      this.addClassToPre();
     if (!this.readOnly) {
       this.createElm();
     }
@@ -90,6 +94,7 @@ export default {
       this.editor.destroy();
     },
     triggerChange() {
+        this.addClassToPre() ;
       const content = this.editor.getContent();
       setTimeout(() => {
         if (/<[a-z][\s\S]*>/i.test(content)) {
@@ -104,9 +109,15 @@ export default {
       }
     },
     uploadedCallback(url) {
-      console.log("callback")
+      // console.log("callback")
       this.$emit("uploaded", url);
-    }
+    },
+      addClassToPre() {
+          hljs.configure({useBR: true});
+          document.querySelectorAll('pre').forEach((block) => {
+              hljs.highlightBlock(block);
+          });
+      }
   },
   destroyed() {
     this.destroyElm();
