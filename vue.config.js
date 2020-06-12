@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath: '/<vuejs-medium-editor>/'
+    publicPath: '/vuejs-medium-editor/'
 }
