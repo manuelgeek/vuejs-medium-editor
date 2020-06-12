@@ -116,6 +116,7 @@ export default {
           hljs.configure({useBR: true});
           document.querySelectorAll('pre').forEach((block) => {
               hljs.highlightBlock(block);
+              block.setAttribute("spellcheck", "false");
           });
       }
   },

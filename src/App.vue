@@ -106,5 +106,6 @@ export default {
 @import "~medium-editor/dist/css/medium-editor.css";
 @import "./themes/default.css";
 /*@import '~highlight.js/styles/github.css';*/
-@import '~highlight.js/styles/ocean.css';
+/*@import '~highlight.js/styles/ocean.css';*/
+@import '~highlight.js/styles/androidstudio.css';
 </style>
