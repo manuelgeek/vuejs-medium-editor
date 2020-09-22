@@ -37,7 +37,7 @@ export default {
   name: "medium-editor",
   data() {
     return {
-      editor: null,
+      editor: true,//Changed
       defaultOptions: {
         forcePlainText: false,
         placeholder: {

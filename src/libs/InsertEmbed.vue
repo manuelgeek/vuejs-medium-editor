@@ -51,10 +51,10 @@ export default {
         return {
             insert: {
                 position: {
-                    top: '0',
-                    left: '0'
+                    top: '5', //Changed
+                    left: '10'
                 },
-                isShow: false,
+                isShow: true, //Changed
                 isToggle: false,
                 embedElm: null,
                 files: [],

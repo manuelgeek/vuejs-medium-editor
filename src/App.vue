@@ -17,7 +17,8 @@ export default {
   data() {
     return {
       content: ``,
-      defaultValue: `<h1>Vuejs <b>Medium Editor</b></h1>
+      defaultValue: `Default`,//Changed
+      /*`<h1>Vuejs <b>Medium Editor</b></h1>
           <div class="editor-image is-full"><img src="https://source.unsplash.com/yxNURc8he3o/2000x600"></div>
           <pre>axios.interceptors.response.use(function (response) {<br>  return response;<br>}, function (error) {<br>  const originalRequest = error.config;<br>  if (error.response.status === 401 &amp;&amp; !originalRequest._retry) {<br>    originalRequest._retry = true;<br>    const refreshToken = window.localStorage.getItem('refreshToken');<br>    return axios.post('http://localhost:8000/auth/refresh', { refreshToken })<br>      .then(({data}) =&gt; {<br>        window.localStorage.setItem('token', data.token);<br>        window.localStorage.setItem('refreshToken', data.refreshToken);<br>        axios.defaults.headers.common['Authorization'] = 'Bearer ' + data.token;<br>        originalRequest.headers['Authorization'] = 'Bearer ' + data.token;<br>        return axios(originalRequest);<br>      });<br>  }<br>  return Promise.reject(error);<br>});</pre>
           <div class="editor-image-description">righteous indignation and dislike</div>
@@ -47,6 +48,7 @@ export default {
           <div class="editor-image-description">I will give you a complete account of the system</div>
           <p></p>
           <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of wills</p>`,
+      */
       options: {
         uploadUrl: "https://api.imgur.com/3/image",
         uploadUrlHeader: {'Authorization': 'Client-ID db856b43cc7f441'},
