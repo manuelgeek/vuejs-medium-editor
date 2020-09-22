@@ -23,11 +23,11 @@
                 <insert-gist :editor="editor"
                     v-on:onChange="onChange" :insert="insert" title="Insert gist"></insert-gist>
 
-                <insert-youtube
+                <insert-video
                     :editor="editor"
                     :editorRef="editorRef"
                     :insert="insert"
-                  > </insert-youtube>
+                  > </insert-video>
 
 
 
@@ -43,7 +43,7 @@
 <script>
 import InsertImage from './Embed/InsertImage';
 import InsertGist from './Embed/InsertGist';
-import InsertYoutube from './Embed/YoutubeVideo';
+import InsertVideo from './Embed/InsertVideo';
 import ImagePosition from './Embed/ImagePosition';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -56,7 +56,7 @@ export default {
         InsertImage,
         InsertGist,
         ImagePosition,
-        InsertYoutube
+        InsertVideo
     },
     data() {
         return {
