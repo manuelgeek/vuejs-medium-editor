@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       content: ``,
-      defaultValue: `Default`,//Changed
+      defaultValue: ``,//Changed
       /*`<h1>Vuejs <b>Medium Editor</b></h1>
           <div class="editor-image is-full"><img src="https://source.unsplash.com/yxNURc8he3o/2000x600"></div>
           <pre>axios.interceptors.response.use(function (response) {<br>  return response;<br>}, function (error) {<br>  const originalRequest = error.config;<br>  if (error.response.status === 401 &amp;&amp; !originalRequest._retry) {<br>    originalRequest._retry = true;<br>    const refreshToken = window.localStorage.getItem('refreshToken');<br>    return axios.post('http://localhost:8000/auth/refresh', { refreshToken })<br>      .then(({data}) =&gt; {<br>        window.localStorage.setItem('token', data.token);<br>        window.localStorage.setItem('refreshToken', data.refreshToken);<br>        axios.defaults.headers.common['Authorization'] = 'Bearer ' + data.token;<br>        originalRequest.headers['Authorization'] = 'Bearer ' + data.token;<br>        return axios(originalRequest);<br>      });<br>  }<br>  return Promise.reject(error);<br>});</pre>

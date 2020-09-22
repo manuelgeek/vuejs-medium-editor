@@ -1,26 +1,37 @@
 {
-  "name": "vuejs-medium-editor",
-  "version": "1.2.1",
-  "main": "./src/Editor.vue",
-  "description": "This is a Medium like editor for Vue Js 2",
-  "keywords": [
-    "vue",
-    "medium editor",
-    "vue text editor",
-    "vue2 editor",
-    "Nuxt js editor",
-    "js"
+  "_from": "vuejs-medium-editor",
+  "_id": "vuejs-medium-editor@1.2.1",
+  "_inBundle": false,
+  "_integrity": "sha512-gJcfKax/1thKjHy7xE45spKuJdBh/hIxbxhGEYx5CjU42p2F+JU/QYUb4bNaIMi8slaMc/WNB8fLV0G9D+ulAA==",
+  "_location": "/vuejs-medium-editor",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "vuejs-medium-editor",
+    "name": "vuejs-medium-editor",
+    "escapedName": "vuejs-medium-editor",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
   ],
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "publish-demo": "git subtree push --prefix dist origin gh-pages"
+  "_resolved": "https://registry.npmjs.org/vuejs-medium-editor/-/vuejs-medium-editor-1.2.1.tgz",
+  "_shasum": "f7e16a381b4daf28e2fcf0a724cce1246d7ae002",
+  "_spec": "vuejs-medium-editor",
+  "_where": "/home/daffolap-911/Desktop/temp",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "bugs": {
+    "url": "https://github.com/manuelgeek/vuejs-medium-editor/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/manuelgeek/vuejs-medium-editor"
-  },
+  "bundleDependencies": false,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.0",
     "@fortawesome/free-regular-svg-icons": "^5.1.0",
@@ -40,8 +51,12 @@
     "randomstring": "^1.1.5",
     "underscore": "^1.9.1",
     "vue": "^2.5.16",
-    "vue-upload-component": "^2.8.9"
+    "vue-js-modal": "^2.0.0-rc.6",
+    "vue-upload-component": "^2.8.9",
+    "vue-youtube-embed": "^2.2.2"
   },
+  "deprecated": false,
+  "description": "This is a Medium like editor for Vue Js 2",
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-rc.3",
     "@vue/cli-plugin-eslint": "^3.0.0-rc.3",
@@ -65,15 +80,32 @@
       "parser": "babel-eslint"
     }
   },
+  "homepage": "https://github.com/manuelgeek/vuejs-medium-editor#readme",
+  "keywords": [
+    "vue",
+    "medium editor",
+    "vue text editor",
+    "vue2 editor",
+    "Nuxt js editor",
+    "js"
+  ],
+  "license": "MIT",
+  "main": "./src/Editor.vue",
+  "name": "vuejs-medium-editor",
   "postcss": {
     "plugins": {
       "autoprefixer": {}
     }
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ],
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuelgeek/vuejs-medium-editor.git"
+  },
+  "scripts": {
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "publish-demo": "git subtree push --prefix dist origin gh-pages",
+    "serve": "vue-cli-service serve"
+  },
+  "version": "1.2.1"
 }

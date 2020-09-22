@@ -2,7 +2,7 @@
     <div class="image-handler-container">
         <div class="insert-image-container" v-show="insert.isShow" v-bind:style="insert.position">
             <div class="insert-image-toggle">
-                <button v-on:click="toggle" class="btn-toggle">
+                <button @click="toggle" class="btn-toggle">
                     <font-awesome-icon icon="plus" />
                 </button>
             </div>
@@ -22,6 +22,15 @@
                 ></insert-image>
                 <insert-gist :editor="editor"
                     v-on:onChange="onChange" :insert="insert" title="Insert gist"></insert-gist>
+
+                <insert-youtube
+                    :editor="editor"
+                    :editorRef="editorRef"
+                    :insert="insert"
+                  > </insert-youtube>
+
+
+
             </div>
         </div>
         <image-position
@@ -34,6 +43,7 @@
 <script>
 import InsertImage from './Embed/InsertImage';
 import InsertGist from './Embed/InsertGist';
+import InsertYoutube from './Embed/YoutubeVideo';
 import ImagePosition from './Embed/ImagePosition';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -45,7 +55,8 @@ export default {
         FontAwesomeIcon,
         InsertImage,
         InsertGist,
-        ImagePosition
+        ImagePosition,
+        InsertYoutube
     },
     data() {
         return {
