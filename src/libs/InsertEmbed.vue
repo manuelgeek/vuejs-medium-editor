@@ -178,6 +178,8 @@ export default {
     },
     mounted() {
         this.subscribe()
+        let el = document.getElementsByClassName('editor medium-editor-element')
+        if(el.length > 0) el[0].setAttribute('data-medium-focused', true)
     },
     destroyed() {
         this.unsubscribe()
