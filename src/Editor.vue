@@ -72,7 +72,7 @@ export default {
     ReadMode
   },
   mounted() {
-      this.addClassToPre();
+    this.addClassToPre();
     if (!this.readOnly) {
       this.createElm();
     }
@@ -104,16 +104,27 @@ export default {
       // console.log("callback")
       this.$emit("uploaded", url);
     },
-      addClassToPre() {
-          hljs.configure({useBR: true});
-          document.querySelectorAll('pre').forEach((block) => {
-              hljs.highlightBlock(block);
-              block.setAttribute("spellcheck", "false");
-          });
-      }
+    addClassToPre() {
+        hljs.configure({});
+        const brPlugin = {
+          "before:highlightBlock": ({ block }) => {
+            block.innerHTML = block.innerHTML.replace(/<br[ /]*>/g, '\n');
+          },
+          "after:highlightBlock": ({ result }) => {
+            result.value = result.value.replace(/\n/g, "<br>");
+          }
+        };
+
+        hljs.addPlugin(brPlugin);
+        document.querySelectorAll('pre').forEach((block) => {
+            hljs.highlightElement(block);
+            block.setAttribute("spellcheck", "false");
+        });
+    }
   },
   destroyed() {
     this.destroyElm();
   }
 };
 </script>
+
