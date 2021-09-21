@@ -61,7 +61,11 @@ OR in `styles` like below
 #### Example
 
 ```vue
-<medium-editor v-model='content' :options='options' :onChange="onChange" v-on:uploaded="uploadCallback" />
+<medium-editor 
+        v-model='content' 
+        :options='options' 
+        :onChange="onChange" 
+        v-on:uploaded="uploadCallback" />
 
 <script>
 export default {
