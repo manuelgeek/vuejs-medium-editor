@@ -152,6 +152,7 @@ Also, available option: thanks to [ErgoFriend](https://github.com/ErgoFriend) pu
     uploadUrl: "https://api.imgur.com/3/image",
     uploadUrlHeader: {'Authorization': 'Client-ID a3tw6ve4wss3c'},
     file_input_name: "image",
+    file_size: 1024 * 1024 * 10, 
     imgur: true,
  }
 

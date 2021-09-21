@@ -15,6 +15,7 @@
                     :uploadUrl="uploadUrl"
                     :uploadUrlHeader="uploadUrlHeader"
                     :file_input_name="file_input_name"
+                    :file_size="file_size"
                     :imgur_bool="imgur_bool"
                     :handler="handler"
                     v-on:uploaded="uploadCallback"
@@ -77,6 +78,7 @@ export default {
         'uploadUrl',
         'uploadUrlHeader',
         'file_input_name',
+        'file_size',
         'imgur_bool',
         'editorRef',
         'onChange',

@@ -6,6 +6,7 @@
                 :uploadUrl="options.uploadUrl"
                 :uploadUrlHeader="options.uploadUrlHeader"
                 :file_input_name="options.file_input_name"
+                :file_size="options.file_size"
                 :imgur_bool="options.imgur"
                 :onChange="triggerChange"
                 :editorRef="$refs.editor"
@@ -48,6 +49,7 @@ export default {
         uploadUrl: "https://api.imgur.com/3/image",
         uploadUrlHeader: {'Authorization': 'Client-ID db856b43cc7f441'},
         file_input_name: "image",
+        file_size: 1024 * 1024 * 10,
         imgur: true,
         toolbar: {
           buttons: ["bold", "italic", "quote", "h1", "h2", "h3", "h4", "h5", "anchor" ]
