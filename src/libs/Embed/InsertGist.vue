@@ -1,5 +1,5 @@
 <template>
-    <button class="btn-toggle" v-on:click="addEmbed">
+    <button class="btn-toggle" v-on:click="addEmbed" title="Gist URL">
         <font-awesome-icon :icon="['fas', 'code']" />
     </button>
 </template>
@@ -44,7 +44,7 @@ export default {
                     const nextElm = elm.nextElementSibling
                     const link = elm.getElementsByTagName('a')[0]
                     if(!link) return;
-                    
+
                     const url = link.getAttribute('href')
                     nextElm.outerHTML = ''
 
@@ -56,7 +56,7 @@ export default {
             if(this.insert.isToggle) {
                 this.editor.pasteHTML(`<p class="editor-embed"><br></p>`, { cleanAttrs: [], cleanTags: [], unwrapTags: []})
                 this.embedElm = this.editor.getSelectedParentElement()
-                
+
                 this.insert.isToggle = false
                 this.insert.isShow = false
             }
@@ -88,9 +88,9 @@ export default {
                     iframe.contentWindow.document.close();
 
                     const cssLink = document.createElement("link");
-                    cssLink.href = "https://github.githubassets.com/assets/gist-embed-4ac6018bcc05457cde2f66d2e7299d11.css"; 
-                    cssLink.rel = "stylesheet"; 
-                    cssLink.type = "text/css"; 
+                    cssLink.href = "https://github.githubassets.com/assets/gist-embed-4ac6018bcc05457cde2f66d2e7299d11.css";
+                    cssLink.rel = "stylesheet";
+                    cssLink.type = "text/css";
                     iframe.contentWindow.document.head.appendChild(cssLink);
                     iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
 

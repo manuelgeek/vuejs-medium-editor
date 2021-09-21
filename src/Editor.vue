@@ -81,11 +81,7 @@ export default {
     createElm() {
       this.editor = new MediumEditor(this.$refs.editor, this.editorOptions);
       if (this.prefill) {
-        if (/<[a-z][\s\S]*>/i.test(this.prefill)) {
-          this.hasContent = true;
-        } else {
-          this.hasContent = false;
-        }
+        this.hasContent = /<[a-z][\s\S]*>/i.test(this.prefill);
         this.$refs.editor.focus();
       }
       this.editor.subscribe("editableInput", this.triggerChange);
@@ -97,11 +93,7 @@ export default {
         this.addClassToPre() ;
       const content = this.editor.getContent();
       setTimeout(() => {
-        if (/<[a-z][\s\S]*>/i.test(content)) {
-          this.hasContent = true;
-        } else {
-          this.hasContent = false;
-        }
+        this.hasContent = /<[a-z][\s\S]*>/i.test(content);
       }, 0);
       this.$emit("input", content);
       if (this.onChange) {
