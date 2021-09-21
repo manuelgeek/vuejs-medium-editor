@@ -148,6 +148,8 @@ export default {
         },
         toggle () {
             this.insert.isToggle = !this.insert.isToggle;
+            let el = document.getElementsByClassName('editor medium-editor-element')
+          if(el.length > 0) el[0].removeAttribute('data-placeholder')
         },
         imageClickHandler(value) {
             this.handler = value

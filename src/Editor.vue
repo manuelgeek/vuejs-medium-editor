@@ -122,7 +122,7 @@ export default {
             hljs.highlightElement(block);
             block.setAttribute("spellcheck", "false");
         });
-    }
+    },
   },
   destroyed() {
     this.destroyElm();
