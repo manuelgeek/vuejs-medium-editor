@@ -92,7 +92,8 @@ export default {
 - readOnly(boolean) - make the editor read only. Default - false
 - options - used to pass editor options, see below
 - onChange - pass onchange event
-
+- hideImage - Hides image upload option (default -false)
+- hideGist - Hides gist code embed - default(false)
 
 ### Events
 - uploaded - imgur image upload callback
@@ -129,8 +130,22 @@ You can also override options like in Medium Editor ;
  ```
 
 ### images
+Using the image option in toolbar, Add image link, highlight to edit, then select image icon
 
-available options too thanks to [ErgoFriend](https://github.com/ErgoFriend) pull request on the original repo
+```js
+buttons:[
+    {
+        name: 'image',
+        action: 'image',
+        aria: 'insert image from url',
+        tagNames: ['img'],
+        contentDefault: '<b>image</b>',
+        contentFA: '<i class="fa fa-picture-o"></i>'
+    }
+ ]
+```
+
+Also, available option: thanks to [ErgoFriend](https://github.com/ErgoFriend) pull request on the original repo
 
 ```js
  options: {
@@ -143,7 +158,8 @@ available options too thanks to [ErgoFriend](https://github.com/ErgoFriend) pull
 ```
 
 ### code highlighting
-Code highlighting is inbuilt using [highlight.js](https://github.com/highlightjs/highlight.js)
+1. Code highlighting is inbuilt using [highlight.js](https://github.com/highlightjs/highlight.js)
+Add code snippet, highlight, then select code in toolbar(you need to add `pre` in toolbar, see options above)
 
 You should include the `highligh.js` css file within the styles
 ```css
@@ -156,6 +172,10 @@ You should include the `highligh.js` css file within the styles
 ```
 
 You can get [more theme styles here](https://highlightjs.org/static/demo/)
+
+
+2. Code highliting using gist, also inbuilt. Click + button, then click code(Add gist), then add gist URL, click Enter to finish
+
 
 ### Read only example
 ```vue

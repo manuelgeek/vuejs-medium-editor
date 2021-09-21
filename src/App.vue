@@ -5,6 +5,7 @@
             :prefill="defaultValue"
             :options="options"
             :onChange="onChange"
+            :hide-gist="false"
             v-on:uploaded="uploadCallback">
         </medium-editor>
     </div>

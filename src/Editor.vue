@@ -10,6 +10,8 @@
                 :onChange="triggerChange"
                 :editorRef="$refs.editor"
                 :editor="editor"
+                :hide-gist="hideGist"
+                :hide-image="hideImage"
                 v-on:uploaded="uploadedCallback"></insert-embed>
             <list-handler v-if="editor"
                 :editor="editor"
@@ -55,7 +57,7 @@ export default {
         autoLink: true
     };
   },
-  props: ["options", "onChange", "prefill", "readOnly"],
+  props: ["options", "onChange", "prefill", "readOnly", "hideGist", "hideImage"],
   computed: {
     editorOptions() {
       return _.extend(this.defaultOptions, this.options);

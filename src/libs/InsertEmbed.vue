@@ -8,6 +8,7 @@
             </div>
             <div class="insert-image-menu" v-show="insert.isToggle">
                 <insert-image
+                    v-if="!hideImage"
                     :editor="editor"
                     :insert="insert"
                     :editorRef="editorRef"
@@ -20,7 +21,7 @@
                     v-on:imageClick="imageClickHandler"
                     title="Insert Image"
                 ></insert-image>
-                <insert-gist :editor="editor"
+                <insert-gist v-if="!hideGist" :editor="editor"
                     v-on:onChange="onChange" :insert="insert" title="Insert gist"></insert-gist>
             </div>
         </div>
@@ -78,7 +79,9 @@ export default {
         'file_input_name',
         'imgur_bool',
         'editorRef',
-        'onChange'
+        'onChange',
+        'hideGist',
+        'hideImage'
     ],
     methods: {
         subscribe() {
