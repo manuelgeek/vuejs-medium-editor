@@ -6,10 +6,13 @@
                 :uploadUrl="options.uploadUrl"
                 :uploadUrlHeader="options.uploadUrlHeader"
                 :file_input_name="options.file_input_name"
+                :file_size="options.file_size"
                 :imgur_bool="options.imgur"
                 :onChange="triggerChange"
                 :editorRef="$refs.editor"
                 :editor="editor"
+                :hide-gist="hideGist"
+                :hide-image="hideImage"
                 v-on:uploaded="uploadedCallback"></insert-embed>
             <list-handler v-if="editor"
                 :editor="editor"
@@ -46,6 +49,7 @@ export default {
         uploadUrl: "https://api.imgur.com/3/image",
         uploadUrlHeader: {'Authorization': 'Client-ID db856b43cc7f441'},
         file_input_name: "image",
+        file_size: 1024 * 1024 * 10,
         imgur: true,
         toolbar: {
           buttons: ["bold", "italic", "quote", "h1", "h2", "h3", "h4", "h5", "anchor" ]
@@ -55,7 +59,7 @@ export default {
         autoLink: true
     };
   },
-  props: ["options", "onChange", "prefill", "readOnly"],
+  props: ["options", "onChange", "prefill", "readOnly", "hideGist", "hideImage"],
   computed: {
     editorOptions() {
       return _.extend(this.defaultOptions, this.options);
@@ -72,7 +76,7 @@ export default {
     ReadMode
   },
   mounted() {
-      this.addClassToPre();
+    this.addClassToPre();
     if (!this.readOnly) {
       this.createElm();
     }
@@ -81,11 +85,7 @@ export default {
     createElm() {
       this.editor = new MediumEditor(this.$refs.editor, this.editorOptions);
       if (this.prefill) {
-        if (/<[a-z][\s\S]*>/i.test(this.prefill)) {
-          this.hasContent = true;
-        } else {
-          this.hasContent = false;
-        }
+        this.hasContent = /<[a-z][\s\S]*>/i.test(this.prefill);
         this.$refs.editor.focus();
       }
       this.editor.subscribe("editableInput", this.triggerChange);
@@ -97,11 +97,7 @@ export default {
         this.addClassToPre() ;
       const content = this.editor.getContent();
       setTimeout(() => {
-        if (/<[a-z][\s\S]*>/i.test(content)) {
-          this.hasContent = true;
-        } else {
-          this.hasContent = false;
-        }
+        this.hasContent = /<[a-z][\s\S]*>/i.test(content);
       }, 0);
       this.$emit("input", content);
       if (this.onChange) {
@@ -112,16 +108,27 @@ export default {
       // console.log("callback")
       this.$emit("uploaded", url);
     },
-      addClassToPre() {
-          hljs.configure({useBR: true});
-          document.querySelectorAll('pre').forEach((block) => {
-              hljs.highlightBlock(block);
-              block.setAttribute("spellcheck", "false");
-          });
-      }
+    addClassToPre() {
+        hljs.configure({});
+        const brPlugin = {
+          "before:highlightBlock": ({ block }) => {
+            block.innerHTML = block.innerHTML.replace(/<br[ /]*>/g, '\n');
+          },
+          "after:highlightBlock": ({ result }) => {
+            result.value = result.value.replace(/\n/g, "<br>");
+          }
+        };
+
+        hljs.addPlugin(brPlugin);
+        document.querySelectorAll('pre').forEach((block) => {
+            hljs.highlightElement(block);
+            block.setAttribute("spellcheck", "false");
+        });
+    },
   },
   destroyed() {
     this.destroyElm();
   }
 };
 </script>
+

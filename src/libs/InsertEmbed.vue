@@ -8,19 +8,21 @@
             </div>
             <div class="insert-image-menu" v-show="insert.isToggle">
                 <insert-image
+                    v-if="!hideImage"
                     :editor="editor"
                     :insert="insert"
                     :editorRef="editorRef"
                     :uploadUrl="uploadUrl"
                     :uploadUrlHeader="uploadUrlHeader"
                     :file_input_name="file_input_name"
+                    :file_size="file_size"
                     :imgur_bool="imgur_bool"
                     :handler="handler"
                     v-on:uploaded="uploadCallback"
                     v-on:imageClick="imageClickHandler"
                     title="Insert Image"
                 ></insert-image>
-                <insert-gist :editor="editor"
+                <insert-gist v-if="!hideGist" :editor="editor"
                     v-on:onChange="onChange" :insert="insert" title="Insert gist"></insert-gist>
             </div>
         </div>
@@ -76,9 +78,12 @@ export default {
         'uploadUrl',
         'uploadUrlHeader',
         'file_input_name',
+        'file_size',
         'imgur_bool',
         'editorRef',
-        'onChange'
+        'onChange',
+        'hideGist',
+        'hideImage'
     ],
     methods: {
         subscribe() {
@@ -145,6 +150,8 @@ export default {
         },
         toggle () {
             this.insert.isToggle = !this.insert.isToggle;
+            let el = document.getElementsByClassName('editor medium-editor-element')
+          if(el.length > 0) el[0].removeAttribute('data-placeholder')
         },
         imageClickHandler(value) {
             this.handler = value
@@ -171,6 +178,8 @@ export default {
     },
     mounted() {
         this.subscribe()
+        let el = document.getElementsByClassName('editor medium-editor-element')
+        if(el.length > 0) el[0].setAttribute('data-medium-focused', true)
     },
     destroyed() {
         this.unsubscribe()

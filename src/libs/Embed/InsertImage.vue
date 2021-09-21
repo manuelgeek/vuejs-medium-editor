@@ -8,7 +8,7 @@
         :headers="uploadUrlHeader"
         :name="file_input_name"
         :multiple="true"
-        :size="1024 * 1024 * 10"
+        :size="file_size"
         v-model="insert.files"
         @input-filter="inputFilter"
         @input-file="inputFile">
@@ -30,6 +30,7 @@ export default {
         'uploadUrl',
         'uploadUrlHeader',
         'file_input_name',
+        'file_size',
         'imgur_bool',
         'editorRef',
         'handler'
@@ -55,7 +56,7 @@ export default {
             setTimeout(() => {
                 const focused = this.editor.getFocusedElement()
                 if(!focused) return false;
-                
+
                 const editorImages = focused.getElementsByClassName('editor-image')
                 _.map(editorImages, (elm) => {
                     // Set Onclick to Show Image Size Handler
@@ -126,7 +127,7 @@ export default {
             if (newFile && !oldFile) {
                 this.$refs.upload.active = true
             }
-            
+
             // Image Upload Successful
             if(newFile && newFile.success) {
                 if(this.imgur_bool) {
