@@ -52,7 +52,7 @@ OR in `styles` like below
 ```css
 <style lang="css">
 @import "~medium-editor/dist/css/medium-editor.css";
-@import "./themes/default.css";
+@import "~vuejs-medium-editor/src/themes/default.css";
 /*@import '~highlight.js/styles/github.css';*/
 @import '~highlight.js/styles/ocean.css';
 </style>
@@ -68,6 +68,8 @@ OR in `styles` like below
         v-on:uploaded="uploadCallback" />
 
 <script>
+import Editor from "./Editor.vue";
+
 export default {
     data() {
         return {
