@@ -15,7 +15,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "publish-demo": "git subtree push --prefix dist origin gh-pages"
+    "publish-demo": "git subtree push --prefix dist origin gh-pages",
+    "publish-demo-f": "git push origin `git subtree split --prefix dist master`:gh-pages --force"
   },
   "repository": {
     "type": "git",
