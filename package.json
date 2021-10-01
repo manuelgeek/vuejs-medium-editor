@@ -1,6 +1,6 @@
 {
   "name": "vuejs-medium-editor",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "main": "./src/Editor.vue",
   "description": "This is a Medium like editor for Vue Js 3",
   "keywords": [
@@ -15,7 +15,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "publish-demo": "git subtree push --prefix dist origin gh-pages"
+    "publish-demo": "git subtree push --prefix dist origin gh-pages",
+    "publish-demo-f": "git push origin `git subtree split --prefix dist master`:gh-pages --force"
   },
   "repository": {
     "type": "git",
