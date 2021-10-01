@@ -13,6 +13,7 @@
 
 <script>
 import Editor from "./Editor.vue";
+
 export default {
   name: "app",
   data() {

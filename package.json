@@ -1,8 +1,8 @@
 {
   "name": "vuejs-medium-editor",
-  "version": "1.2.3",
+  "version": "1.2.5",
   "main": "./src/Editor.vue",
-  "description": "This is a Medium like editor for Vue Js 3",
+  "description": "This is a Medium like editor for Vue Js",
   "keywords": [
     "vue",
     "medium editor",
@@ -10,6 +10,10 @@
     "vue2 editor",
     "Nuxt js editor",
     "js"
+  ],
+  "files": [
+    "src",
+    "src/assets"
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
