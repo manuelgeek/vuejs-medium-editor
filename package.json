@@ -1,6 +1,6 @@
 {
   "name": "vuejs-medium-editor",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "main": "./src/Editor.vue",
   "description": "This is a Medium like editor for Vue Js",
   "keywords": [
@@ -13,7 +13,16 @@
   ],
   "files": [
     "src",
-    "src/assets"
+    "src/assets/logo.png",
+    "src/assets/icons/image-align-expand-active.png",
+    "src/assets/icons/image-align-expand.png",
+    "src/assets/icons/image-align-full-active.png",
+    "src/assets/icons/image-align-full.png",
+    "src/assets/icons/image-align-normal-active.png",
+    "src/assets/icons/image-align-normal.png",
+    "LICENSE",
+    "package.json",
+    "README.md"
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
