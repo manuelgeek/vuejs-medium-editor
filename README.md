@@ -204,7 +204,7 @@ import a plugin in nuxt.config.js with disable ssr mode
 
 ```js
 plugins: [
-    { src: '~/plugins/medium-editor', ssr: false },
+    { src: '~/plugins/vuejs-medium-editor', ssr: false },
 ]
 ```
 
