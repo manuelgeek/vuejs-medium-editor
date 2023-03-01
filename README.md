@@ -2,11 +2,11 @@
 
 # Vue3 Medium Editor
 
-Vue Js component for Medium Editor wrapper with https://github.com/yabwe/medium-editor
+Vue 3 Js component for Medium Editor wrapper with https://github.com/yabwe/medium-editor
 But all plugins are re-writing in Vue.js
 All Medium Editor configs are supported
 
-### For Vue 2 support, check out ----
+### For Vue 2 support, check out [https://github.com/manuelgeek/vuejs-medium-editor](https://github.com/manuelgeek/vuejs-medium-editor)
 
 ## Demo
 

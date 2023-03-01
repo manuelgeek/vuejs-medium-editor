@@ -115,7 +115,7 @@ export default {
 <style>
 /* @import "~bulma/css/bulma.css"; */
 @import 'medium-editor/dist/css/medium-editor.css';
-@import './themes/default.css';
+@import './assets/themes/default.css';
 /*@import '~highlight.js/styles/github.css';*/
 /* @import 'highlight.js/styles/ocean.css'; */
 @import 'highlight.js/styles/androidstudio.css';

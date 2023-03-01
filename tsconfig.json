@@ -13,6 +13,7 @@
     "skipLibCheck": true,
     "allowJs": true,
     "noEmit": true,
+    "types": ["node"],
     "typeRoots": ["../../typings", "../../node_modules/@types"]
   },
   "include": [
