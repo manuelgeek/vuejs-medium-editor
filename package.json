@@ -1,5 +1,5 @@
 {
-  "name": "vue3-medium-editor",
+  "name": "vuejs-medium-editor",
   "private": true,
   "version": "3.0.0",
   "type": "module",
@@ -12,7 +12,8 @@
     ".": {
       "import": "./dist/vuejs-medium-editor.js",
       "require": "./dist/vuejs-medium-editor.umd.cjs"
-    }
+    },
+    "./dist/themes/default.css": "./dist/themes/default.css"
   },
   "scripts": {
     "dev": "vite",

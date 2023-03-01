@@ -26,5 +26,8 @@ export default defineConfig({
         },
       },
     },
+    commonjsOptions: {
+      esmExternals: true,
+    },
   },
 })

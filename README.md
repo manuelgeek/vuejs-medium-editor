@@ -68,10 +68,10 @@ Don't forget to include css file in your project
 For Vue 2
 
 ```js
-require 'medium-editor/dist/css/medium-editor.css'
-require 'vuejs-medium-editor/src/themes/default.css'
+import 'medium-editor/dist/css/medium-editor.css'
+import 'vuejs-medium-editor/src/themes/default.css'
 // for the code highlighting
-require 'highlight.js/styles/ocean.css';
+import 'highlight.js/styles/ocean.css'
 ```
 
 OR in `styles` like below
@@ -88,10 +88,10 @@ OR in `styles` like below
 For for Vue 3
 
 ```js
-require 'medium-editor/dist/css/medium-editor.css'
-require 'vuejs-medium-editor/themes/default.css'
+import 'medium-editor/dist/css/medium-editor.css'
+import 'vuejs-medium-editor/dist/themes/default.css'
 // for the code highlighting
-require 'highlight.js/styles/ocean.css';
+import 'highlight.js/styles/ocean.css'
 ```
 
 OR in `styles` like below
@@ -99,7 +99,7 @@ OR in `styles` like below
 ```css
 <style lang="css">
 @import "medium-editor/dist/css/medium-editor.css";
-@import "vuejs-medium-editor/themes/default.css";
+@import "vuejs-medium-editor/dist/themes/default.css";
 /*@import '~highlight.js/styles/github.css';*/
 @import 'highlight.js/styles/ocean.css';
 </style>
@@ -285,7 +285,7 @@ For Vue 3
 ```js
 css: [
   'medium-editor/dist/css/medium-editor.css',
-  'vuejs-medium-editor/themes/default.css',
+  'vuejs-medium-editor/dist/themes/default.css',
   'highlight.js/styles/ocean.css', //if using code highlight
 ]
 ```
