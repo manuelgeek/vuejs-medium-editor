@@ -1,9 +1,11 @@
 [![npm version](https://badge.fury.io/js/vuejs-medium-editor.svg)](https://github.com/manuelgeek/vuejs-medium-editor)  [![npm version](https://badgen.net/npm/dt/vuejs-medium-editor)](https://github.com/manuelgeek/vuejs-medium-editor) [![npm version](https://badgen.net/npm/license/lodash)](https://github.com/manuelgeek/vuejs-medium-editor)
 # VueJS Medium Editor
 
-Vue Js component for Medium Editor wrapper with https://github.com/yabwe/medium-editor
+Vue 2 Js component for Medium Editor wrapper with https://github.com/yabwe/medium-editor
 But all plugins are re-writing in Vue.js
 All Medium Editor configs are supported
+
+### For Vue 3 support, check out [https://github.com/manuelgeek/vue3-medium-editor](https://github.com/manuelgeek/vue3-medium-editor)
 
 ## Demo
 [Demo](https://manuelgeek.github.io/vuejs-medium-editor/)
