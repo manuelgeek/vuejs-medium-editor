@@ -1,6 +1,6 @@
 {
   "name": "vuejs-medium-editor",
-  "version": "1.2.7",
+  "version": "1.2.6",
   "main": "./src/Editor.vue",
   "description": "This is a Medium like editor for Vue Js",
   "keywords": [
