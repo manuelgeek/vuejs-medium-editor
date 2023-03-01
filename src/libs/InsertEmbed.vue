@@ -55,7 +55,7 @@ import ImagePosition from './Embed/ImagePosition.vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import * as _ from 'underscore'
+import _ from 'underscore'
 
 library.add(faPlus)
 
@@ -106,13 +106,12 @@ export default {
   mounted() {
     this.subscribe()
     let el = document.getElementsByClassName('editor medium-editor-element')
-    if (el.length > 0) el[0].setAttribute('data-medium-focused', true)
+    if (el.length > 0) el[0].setAttribute('data-medium-focused', 'true')
   },
   unmounted() {
     this.unsubscribe()
   },
   beforeMount() {
-    this.window = window
     window.addEventListener('scroll', this.handleScroll)
   },
   beforeUnmount() {
@@ -147,7 +146,10 @@ export default {
         }
       })
     },
-    detectShowToggle(e) {
+    detectShowToggle(e: {
+      keyCode: number
+      target: { className: string | string[] }
+    }) {
       if (this.insert.isShow && this.insert.isToggle) {
         this.toggle()
       }
@@ -195,10 +197,16 @@ export default {
       let el = document.getElementsByClassName('editor medium-editor-element')
       if (el.length > 0) el[0].removeAttribute('data-placeholder')
     },
-    imageClickHandler(value) {
+    imageClickHandler(value: {
+      currentLine: null
+      currentImg: null
+      currentSize: string
+      position: { top: string }
+      isShow: boolean
+    }) {
       this.handler = value
     },
-    uploadCallback(url) {
+    uploadCallback(url: any) {
       this.$emit('uploaded', url)
     },
     handleScroll() {
