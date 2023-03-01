@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <div>
     <!-- Editor Mode -->
@@ -24,7 +25,6 @@
         :editor="editor"
         :on-change="triggerChange"
       ></list-handler>
-      <!-- eslint-disable-next-line vue/no-v-html -->
       <div
         ref="editor"
         class="editor"
@@ -116,7 +116,10 @@ export default {
   },
   methods: {
     createElm() {
-      this.editor = new MediumEditor(this.$refs.editor, this.editorOptions)
+      this.editor = new MediumEditor(
+        this.$refs.editor as any,
+        this.editorOptions
+      )
       if (this.prefill) {
         this.hasContent = /<[a-z][\s\S]*>/i.test(this.prefill)
         ;(this.$refs as any).editor.focus()
