@@ -11,9 +11,19 @@
     "format": "prettier .  --write"
   },
   "dependencies": {
-    "vue": "^3.2.45"
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-regular-svg-icons": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/vue-fontawesome": "^3.0.3",
+    "pure-gist-embed": "^1.0.3",
+    "randomstring": "^1.2.3",
+    "underscore": "^1.13.6",
+    "vue": "^3.2.45",
+    "vue-upload-component": "^3.1.6"
   },
   "devDependencies": {
+    "@types/randomstring": "^1.1.8",
+    "@types/underscore": "^1.11.4",
     "@typescript-eslint/parser": "^5.54.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "eslint": "^8.35.0",

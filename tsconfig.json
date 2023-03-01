@@ -11,8 +11,17 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
-    "noEmit": true
+    "allowJs": true,
+    "noEmit": true,
+    "typeRoots": ["../../typings", "../../node_modules/@types"]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "index.d.ts"
+  ],
+  "exclude": ["../../node_modules", "../../typings"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
