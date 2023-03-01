@@ -1,20 +1,21 @@
-[![npm version](https://badge.fury.io/js/vuejs-medium-editor.svg)](https://github.com/manuelgeek/vuejs-medium-editor)  [![npm version](https://badgen.net/npm/dt/vuejs-medium-editor)](https://github.com/manuelgeek/vuejs-medium-editor) [![npm version](https://badgen.net/npm/license/lodash)](https://github.com/manuelgeek/vuejs-medium-editor)
-# VueJS Medium Editor
+[![npm version](https://badge.fury.io/js/vuejs-medium-editor.svg)](https://github.com/manuelgeek/vuejs-medium-editor) [![npm version](https://badgen.net/npm/dt/vuejs-medium-editor)](https://github.com/manuelgeek/vuejs-medium-editor) [![npm version](https://badgen.net/npm/license/lodash)](https://github.com/manuelgeek/vuejs-medium-editor)
 
-Vue 2 Js component for Medium Editor wrapper with https://github.com/yabwe/medium-editor
+# VueJs Medium Editor
+
+Vue 2 and 3 Js component for Medium Editor wrapper with https://github.com/yabwe/medium-editor
 But all plugins are re-writing in Vue.js
 All Medium Editor configs are supported
 
-### For Vue 3 support, check out [https://github.com/manuelgeek/vue3-medium-editor](https://github.com/manuelgeek/vue3-medium-editor)
-
 ## Demo
-[Demo](https://manuelgeek.github.io/vuejs-medium-editor/)
+
+[Demo](https://manuelgeek.github.io/vue3-medium-editor/)
 
 ## Features
+
 - Medium like editor
 - Image uploader and description
-    - Image width configable width for normal / expand / full screen sizing
-    - Imgur uploading 
+  - Image width configable width for normal / expand / full screen sizing
+  - Imgur uploading
 - Embed Gist
 - Inline code syntax highlighting
 
@@ -24,16 +25,24 @@ All Medium Editor configs are supported
 
 ```
 yarn add vuejs-medium-editor
+
+# Vue 3
+yarn add vuejs-medium-editor@next
+
 ```
-OR 
+
+OR
 
 ```
 npm install vuejs-medium-editor
+
+#Vue 3
+npm install vuejs-medium-editor@next
 ```
 
 ### Usage
 
-add to global component
+add to global component in Vue 2
 
 ```js
 import Vue from 'vue'
@@ -42,13 +51,29 @@ import MediumEditor from 'vuejs-medium-editor'
 Vue.component('medium-editor', MediumEditor)
 ```
 
-Don't forget to include css file in your project
+OR Vue 3
+
 ```js
-require 'medium-editor/dist/css/medium-editor.css'
-require 'vuejs-medium-editor/src/themes/default.css'
-// for the code highlighting
-require 'highlight.js/styles/ocean.css';
+import { createApp } from 'vue'
+import MediumEditor from 'vuejs-medium-editor'
+import App from './App.vue'
+
+const app = createApp(App)
+
+app.component('medium-editor', MediumEditor)
+app.mount('#app')
 ```
+
+Don't forget to include css file in your project
+For Vue 2
+
+```js
+import 'medium-editor/dist/css/medium-editor.css'
+import 'vuejs-medium-editor/src/themes/default.css'
+// for the code highlighting
+import 'highlight.js/styles/ocean.css'
+```
+
 OR in `styles` like below
 
 ```css
@@ -60,43 +85,64 @@ OR in `styles` like below
 </style>
 ```
 
+For for Vue 3
+
+```js
+import 'medium-editor/dist/css/medium-editor.css'
+import 'vuejs-medium-editor/dist/themes/default.css'
+// for the code highlighting
+import 'highlight.js/styles/ocean.css'
+```
+
+OR in `styles` like below
+
+```css
+<style lang="css">
+@import "medium-editor/dist/css/medium-editor.css";
+@import "vuejs-medium-editor/dist/themes/default.css";
+/*@import '~highlight.js/styles/github.css';*/
+@import 'highlight.js/styles/ocean.css';
+</style>
+```
+
 #### Example
 
 ```vue
-<medium-editor 
-        v-model='content' 
-        :options='options' 
-        :onChange="onChange" 
-        v-on:uploaded="uploadCallback" />
+<medium-editor
+  v-model="content"
+  :options="options"
+  :onChange="onChange"
+  v-on:uploaded="uploadCallback"
+/>
 
 <script>
-import Editor from "./Editor.vue";
+import Editor from './Editor.vue'
 
 export default {
-    data() {
-        return {
-            content: "",
-            options: {
-            }
-        }
+  data() {
+    return {
+      content: '',
+      options: {},
+    }
+  },
+  components: {
+    'medium-editor': Editor,
+  },
+  methods: {
+    onChange() {
+      console.log(this.content)
     },
-    components: {
-      "medium-editor": Editor
+    uploadCallback(url) {
+      console.log('uploaded url', url)
     },
-    methods: {
-      onChange() {
-        console.log(this.content)
-      },
-      uploadCallback(url) {
-        console.log("uploaded url", url)
-      }
-    },
+  },
 }
 </script>
 ```
 
 ### Available Props
-- prefill(string) - Pre filled editor value - default value, 
+
+- prefill(string) - Pre filled editor value - default value,
 - readOnly(boolean) - make the editor read only. Default - false
 - options - used to pass editor options, see below
 - onChange - pass onchange event
@@ -104,53 +150,67 @@ export default {
 - hideGist - Hides gist code embed - default(false)
 
 ### Events
+
 - uploaded - imgur image upload callback
 
 ### Options
 
 #### toolbar
-you can customize the toolbar buttons too 
+
+you can customize the toolbar buttons too
 
 ```js
- options:{
+options: {
   toolbar: {
-    buttons: ["bold", "italic", "underline", "quote", "h1", "h2", "h3", 'pre', 'unorderedlist']
+    buttons: [
+      'bold',
+      'italic',
+      'underline',
+      'quote',
+      'h1',
+      'h2',
+      'h3',
+      'pre',
+      'unorderedlist',
+    ]
   }
 }
 ```
+
 available options: All options are available [here](https://github.com/yabwe/medium-editor#mediumeditor-options)
 You can also override options like in Medium Editor ;
- ```js
-  options:{
-    buttons: [
-      "anchor",
-      {
-        name: 'pre',
-        action: 'append-pre',
-        aria: 'code highlight',
-        tagNames: ['pre'],
-        contentDefault: '<b><\\></b>',
-        contentFA: '<i class="fa fa-code fa-lg"></i>'
-      },
-    ]
-  }
 
- ```
+```js
+options: {
+  buttons: [
+    'anchor',
+    {
+      name: 'pre',
+      action: 'append-pre',
+      aria: 'code highlight',
+      tagNames: ['pre'],
+      contentDefault: '<b><\\></b>',
+      contentFA: '<i class="fa fa-code fa-lg"></i>',
+    },
+  ]
+}
+```
 
 ### images
+
 Using the image option in toolbar, Add image link, highlight to edit, then select image icon
 
 ```js
-buttons:[
-    {
-        name: 'image',
-        action: 'image',
-        aria: 'insert image from url',
-        tagNames: ['img'],
-        contentDefault: '<b>image</b>',
-        contentFA: '<i class="fa fa-picture-o"></i>'
-    }
- ]
+buttons: [
+  {
+    name: 'image',
+    action: 'image',
+    aria: 'insert image from url',
+    tagNames: ['img'],
+    contentDefault: '<b>image</b>',
+    contentFA: '<i class="fa fa-picture-o"></i>',
+  },
+]
 ```
 
 Also, available option: thanks to [ErgoFriend](https://github.com/ErgoFriend) pull request on the original repo
@@ -160,17 +220,19 @@ Also, available option: thanks to [ErgoFriend](https://github.com/ErgoFriend) pu
     uploadUrl: "https://api.imgur.com/3/image",
     uploadUrlHeader: {'Authorization': 'Client-ID a3tw6ve4wss3c'},
     file_input_name: "image",
-    file_size: 1024 * 1024 * 10, 
+    file_size: 1024 * 1024 * 10,
     imgur: true,
  }
 
 ```
 
 ### code highlighting
+
 1. Code highlighting is inbuilt using [highlight.js](https://github.com/highlightjs/highlight.js)
-Add code snippet, highlight, then select code in toolbar(you need to add `pre` in toolbar, see options above)
+   Add code snippet, highlight, then select code in toolbar(you need to add `pre` in toolbar, see options above)
 
 You should include the `highligh.js` css file within the styles
+
 ```css
 <style>
     /*default css  */
@@ -182,13 +244,12 @@ You should include the `highligh.js` css file within the styles
 
 You can get [more theme styles here](https://highlightjs.org/static/demo/)
 
-
 2. Code highliting using gist, also inbuilt. Click + button, then click code(Add gist), then add gist URL, click Enter to finish
 
-
 ### Read only example
+
 ```vue
-<medium-editor :prefill="defaultValue"  :read-only="true" />
+<medium-editor :prefill="defaultValue" :read-only="true" />
 ```
 
 ### Nuxt.js Usage
@@ -205,34 +266,37 @@ Vue.component('medium-editor', MediumEditor)
 import a plugin in nuxt.config.js with disable ssr mode
 
 ```js
-plugins: [
-    { src: '~/plugins/vuejs-medium-editor', ssr: false },
-]
+plugins: [{ src: '~/plugins/vuejs-medium-editor', ssr: false }]
 ```
 
 include a css file
+For Vue 2
+
 ```js
 css: [
-    'medium-editor/dist/css/medium-editor.css',
-    'vuejs-medium-editor/src/themes/default.css',
-    'highlight.js/styles/ocean.css' //if using code highlight
+  'medium-editor/dist/css/medium-editor.css',
+  'vuejs-medium-editor/src/themes/default.css',
+  'highlight.js/styles/ocean.css', //if using code highlight
 ]
 ```
 
+For Vue 3
 
-## About Me 
+```js
+css: [
+  'medium-editor/dist/css/medium-editor.css',
+  'vuejs-medium-editor/dist/themes/default.css',
+  'highlight.js/styles/ocean.css', //if using code highlight
+]
+```
+
+## About Me
 
 <p align="center"><img src="https://magak.me/assets/images/Geek-logo.png" width="150">
 
 <a target="_blank" href="https://magak.me">Magak Emmanuel</a>
+
 </p>
-
-## Credits
-
-The original repo [vue2-medium-editor](https://github.com/tui2tone/vue2-medium-editor)
-customised this to my preference
-
-[<img width=200 src="https://appslab.co.ke/assets/img/logo.png">](https://appslab.co.ke) 
 
 ## License
 
@@ -241,6 +305,5 @@ customised this to my preference
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](#)
 
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source-200x33.png?v=103)](#)
-
 
 Happy coding, Star before Fork 😊💪💯
