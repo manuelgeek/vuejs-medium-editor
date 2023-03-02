@@ -36,7 +36,7 @@ OR
 ```
 npm install vuejs-medium-editor
 
-#Vue 3
+# Vue 3
 npm install vuejs-medium-editor@next
 ```
 
@@ -116,7 +116,7 @@ OR in `styles` like below
 />
 
 <script>
-import Editor from './Editor.vue'
+import Editor from 'vuejs-medium-editor'
 
 export default {
   data() {
@@ -236,9 +236,9 @@ You should include the `highligh.js` css file within the styles
 ```css
 <style>
     /*default css  */
-    @import '~highlight.js/styles/default.css';
+    @import 'highlight.js/styles/default.css';
     /* github style */
-    @import '~highlight.js/styles/github.css';
+    @import 'highlight.js/styles/github.css';
 </style>
 ```
 
