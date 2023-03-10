@@ -22,8 +22,20 @@
                     v-on:imageClick="imageClickHandler"
                     title="Insert Image"
                 ></insert-image>
-                <insert-gist v-if="!hideGist" :editor="editor"
-                    v-on:onChange="onChange" :insert="insert" title="Insert gist"></insert-gist>
+                <insert-gist 
+                    v-if="!hideGist" 
+                    :editor="editor"
+                    v-on:onChange="onChange" 
+                    :insert="insert" 
+                    title="Insert gist"
+                ></insert-gist>
+                <insert-video
+                    v-if="!hideVideo"
+                    :editor="editor"
+                    :insert="insert"
+                    title="Insert video"
+                    @on-change="onChange"
+                ></insert-video>
             </div>
         </div>
         <image-position
@@ -36,6 +48,7 @@
 <script>
 import InsertImage from './Embed/InsertImage';
 import InsertGist from './Embed/InsertGist';
+import InsertVideo from './Embed/InsertVideo'
 import ImagePosition from './Embed/ImagePosition';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -47,7 +60,8 @@ export default {
         FontAwesomeIcon,
         InsertImage,
         InsertGist,
-        ImagePosition
+        ImagePosition,
+        InsertVideo,
     },
     data() {
         return {
@@ -83,7 +97,8 @@ export default {
         'editorRef',
         'onChange',
         'hideGist',
-        'hideImage'
+        'hideImage',
+        'hideVideo',
     ],
     methods: {
         subscribe() {

@@ -48,7 +48,11 @@ export default {
           </div>
           <div class="editor-image-description">I will give you a complete account of the system</div>
           <p></p>
-          <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of wills</p>`,
+          <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of wills</p>
+          <p class="editor-video">
+            <div class="video-embed-iframe"><iframe id="IHW3m64yRzV5ZJ6HiIKrB40TuH5pjBt1" height="500" title="Video IHW3m64yRzV5ZJ6HiIKrB40TuH5pjBt1" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube.com/embed/OrT0tHGXyqE"></iframe></div>
+            </p>
+            <p class="editor-video"><br></p>`,
       options: {
         uploadUrl: "https://api.imgur.com/3/image",
         uploadUrlHeader: {'Authorization': 'Client-ID db856b43cc7f441'},
@@ -111,4 +115,12 @@ export default {
 /*@import '~highlight.js/styles/github.css';*/
 /*@import '~highlight.js/styles/ocean.css';*/
 @import '~highlight.js/styles/androidstudio.css';
+
+:root {
+  background-color: #F6F6F7;
+}
+
+iframe {
+  height: 500px !important;
+}
 </style>

@@ -13,6 +13,7 @@
                 :editor="editor"
                 :hide-gist="hideGist"
                 :hide-image="hideImage"
+                :hide-video="hideVideo"
                 v-on:uploaded="uploadedCallback"></insert-embed>
             <list-handler v-if="editor"
                 :editor="editor"
@@ -59,7 +60,7 @@ export default {
         autoLink: true
     };
   },
-  props: ["options", "onChange", "prefill", "readOnly", "hideGist", "hideImage"],
+  props: ["options", "onChange", "prefill", "readOnly", "hideGist", "hideImage", "hideVideo"],
   computed: {
     editorOptions() {
       return _.extend(this.defaultOptions, this.options);

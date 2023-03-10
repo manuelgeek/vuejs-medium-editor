@@ -18,6 +18,10 @@ All Medium Editor configs are supported
   - Imgur uploading
 - Embed Gist
 - Inline code syntax highlighting
+- Embed video
+ - Youtube video and shorts
+ - Vimeo video
+ - Loom video
 
 ## Usage
 
@@ -148,6 +152,7 @@ export default {
 - onChange - pass onchange event
 - hideImage - Hides image upload option (default -false)
 - hideGist - Hides gist code embed - default(false)
+- hideVideo - Hides video embed - default(false)
 
 ### Events
 
