@@ -18,6 +18,7 @@
         :editor="editor"
         :hide-gist="hideGist"
         :hide-image="hideImage"
+        :hide-video="hideVideo"
         @uploaded="uploadedCallback"
       ></insert-embed>
       <list-handler
@@ -62,6 +63,7 @@ export default {
     'readOnly',
     'hideGist',
     'hideImage',
+    'hideVideo',
   ],
   emits: ['uploaded', 'input'],
   data() {

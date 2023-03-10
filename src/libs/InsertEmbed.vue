@@ -39,6 +39,13 @@
           title="Insert gist"
           @on-change="onChange"
         ></insert-gist>
+        <insert-video
+          v-if="!hideVideo"
+          :editor="editor"
+          :insert="insert"
+          title="Insert video"
+          @on-change="onChange"
+        ></insert-video>
       </div>
     </div>
     <image-position
@@ -51,6 +58,7 @@
 <script lang="ts">
 import InsertImage from './Embed/InsertImage.vue'
 import InsertGist from './Embed/InsertGist.vue'
+import InsertVideo from './Embed/InsertVideo.vue'
 import ImagePosition from './Embed/ImagePosition.vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -65,6 +73,7 @@ export default {
     InsertImage,
     InsertGist,
     ImagePosition,
+    InsertVideo,
   },
   props: [
     'editor',
@@ -76,6 +85,7 @@ export default {
     'editorRef',
     'onChange',
     'hideGist',
+    'hideVideo',
     'hideImage',
   ],
   emits: ['uploaded'],
