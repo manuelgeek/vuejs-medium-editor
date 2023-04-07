@@ -8,7 +8,7 @@ All Medium Editor configs are supported
 
 ## Demo
 
-[Demo](https://manuelgeek.github.io/vue3-medium-editor/)
+[Demo](https://manuelgeek.github.io/vuejs-medium-editor/)
 
 ## Features
 
