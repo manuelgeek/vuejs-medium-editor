@@ -111,12 +111,6 @@ export default {
       iframeContainer.appendChild(iframe)
 
       setTimeout(() => {
-        // const focused = this.editor.getSelectedParentElement()
-        // this.currentLine =
-        //     this.editor.getSelectedParentElement().previousElementSibling.previousElementSibling
-        // const currentIframe = focused.querySelector('iframe')
-        // const currentPos = currentIframe.getBoundingClientRect()
-        // window.scrollTo(0, currentPos.top - currentPos.x)
         this.$emit('onChange')
       }, 100)
     },
@@ -212,11 +206,6 @@ export default {
       return !!pattern.test(url)
     },
   },
-  // beforeMount() {
-  //     window.addEventListener('scroll', this.handleScroll);
-  // },
-  // beforeDestroy() {
-  //     window.removeEventListener('scroll', this.handleScroll);
-  // }
+
 }
 </script>
