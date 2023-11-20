@@ -114,7 +114,9 @@ export default {
     }
   },
   unmounted() {
-    this.destroyElm()
+    if (!this.readOnly) {
+      this.destroyElm()
+    }
   },
   methods: {
     createElm() {
